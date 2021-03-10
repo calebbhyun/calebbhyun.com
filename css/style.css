@@ -1,0 +1,390 @@
+body, html {
+    /* Disable text select */
+    user-select: none;
+    /* Disable overscroll behavior */
+    overscroll-behavior: none;
+    /* Remove the blue highlighting of elements */
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-family: "Raleway", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+/* Rounded Corners on Images */
+.roundedcorners {
+    border-radius: 5px;
+}
+
+/* Navigation */
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.navbar a:hover {
+    background-color: #E4E1DF;
+    opacity: 0.7;
+}
+.fullnavbar {
+    width: 100%;
+    background-color: white;
+}
+
+/* Navigation Bar Shadow */
+.shadownavbar {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* Navigation Bar Animation */
+.animatenavbar {
+    animation: animatetop 0.4s;
+}
+@keyframes animatetop{ 
+    from{ 
+        top: -300px;
+        opacity: 0;
+    } 
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* Mobile Navigation */
+.nav {
+    display: none;
+}
+
+/* Padding for Navigation */
+.content {
+    padding: 16px;
+}
+
+/* Container for Contents */
+.container {
+    overflow-x: hidden;
+    margin: auto;
+    max-width: 70%;
+}
+.container p {
+    font-size: 16px;
+}
+
+/* Add Parallax Effect */
+#banner-image, #portfolio-image, #contact-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100%;
+}
+#banner-text, #portfolio-text, #contact-text {
+    text-align: center;
+    line-height: 0;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    color: white;
+}
+
+/* Home: Banner */
+#banner-image {
+    background-image: url("../images/banner.jpg");
+}
+#banner-text {
+    top: 80%;
+}
+
+/* Table Container */
+.col-container {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 50px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
+}
+.col {
+    display: table-cell;
+}
+
+/* About */
+#about p {
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 0;
+}
+#profile-left {
+    vertical-align: middle;
+}
+#profile-right {
+    vertical-align: top;
+}
+#profile {
+    max-height: 300px;
+}
+#name {
+    text-align: center;
+    margin: 0;
+}
+#profile-right p {
+    margin: auto;
+}
+
+/* Portfolio */
+#portfolio-image {
+    background-image: url("../images/portfolio.jpg");
+}
+#portfolio-text {
+    top: 45%;
+}
+.centertext, #portfolio a {
+    text-align: center;
+}
+#portfolio h6 {
+    margin: 0;
+}
+#portfolio p, #portfolio ul, #portfolio li , #portfolio a {
+    margin: 0;
+    font-size: 16px;
+    line-height: 2;
+}
+#portfolio ul {
+    margin-left: -20px;
+    list-style: none;
+}
+#portfolio li {
+    text-indent: -10px;
+}
+#portfolio li:before {
+    content: "- ";
+}
+#portfolio a {
+    display: block;
+    margin: -10px;
+}
+
+/* Two Columns */
+.column-2 {
+    float: left;
+    width: calc(50% - 25px);
+}
+
+/* Contact */
+#contact-image {
+    background-image: url("../images/contact.jpg");
+}
+#contact-text {
+    top: 45%;
+}
+#contact {
+    text-align: center;
+}
+#contact-left {
+    max-height: 250px;
+    text-align: right;
+}
+#contact-right {
+    margin-left: 50px;
+    text-align: left;
+    padding-top: 60px;
+}
+#halifax {
+    max-height: 250px;
+    max-width: auto;
+}
+#location, #mobile, #email {
+    font-size: 16px;
+}
+#location-icon, #mobile-icon, #email-icon {
+    vertical-align: middle;
+}
+#location-icon:hover, #mobile-icon:hover, #email-icon:hover, #facebook-icon:hover, #instagram-icon:hover, #linkedin-icon:hover, #github-icon:hover {
+    opacity: 0.6;
+}
+
+/* Footer */
+footer {
+    padding-top: 300px;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Disable Parallax Effect and Navigation Bar on Tablets and Phones */
+@media only screen and (max-width: 600px) {
+    #banner-image, #portfolio-image, #contact-image {
+        background-attachment: scroll;
+    }
+    #navigation {
+        display: none;
+    }
+    #iam {
+        font-size: 7vw;
+    }
+    #who {
+        font-size: 4vw;
+    }
+
+    /* Mobile Navigation */
+    .nav {
+        height: 48px;
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 15px;
+        position: fixed;
+        z-index: 1;
+        outline: none;
+    }
+    .nav ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    .nav a {
+        text-decoration: none;
+        color: #1E1E23;
+        opacity: 1;
+        font-size: 28px;
+        font-weight: 400;
+        transition: 200ms;
+    }
+    .nav a:hover {
+        opacity: 0.5;
+    }
+
+    /* Source: codepen.io */
+    #menuToggle {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    #menuToggle input {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    #menuToggle span {
+        display: flex;
+        width: 29px;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: black;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+    }
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+        background: #36383F;
+    }
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+    #menu {
+        position: absolute;
+        max-width: 120px;
+        max-height: 160px;
+        box-shadow: 0 0 10px #85888C;
+        margin: -50px 0 0 -50px;
+        padding: 50px;
+        padding-top: 75px;
+        background-color: white;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        border-bottom-right-radius: 10px;
+    }
+    #menu li {
+        padding: 5px 0;
+        transition-delay: 2s;
+    }
+    #menu li a:hover {
+        color: gray;
+    }
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+}
+
+/* Remove Two Columns on Small Screens */
+@media screen and (max-width: 1025px) {
+    .container {
+        max-width: 90%;
+    }
+    .col {
+        display: block;
+        width: 100%;
+    }
+    #about p {
+        text-align: left;
+    }
+    .column-2 {
+        width: 100%;
+    }
+    #name, #profile-left, #profile-right, #contact-left, #contact-right {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    #profile-left {
+        padding-bottom: 30px;
+    }
+    #profile-right {
+        text-align: left;
+    }
+    #profile, #halifax {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive Header Text when Landscape Orientation */
+@media screen and (orientation: landscape) and (max-width: 1025px) {
+    #banner-text h3 {
+        font-size: 3vw;
+    }
+    #banner-text h6 {
+        font-size: 1.5vw;
+    }
+}
