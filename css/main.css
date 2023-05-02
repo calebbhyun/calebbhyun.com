@@ -1,0 +1,179 @@
+html {
+  /* Disable Text Select */
+  user-select: none;
+
+  /* Remove the Blue Highlighting of Elements */
+  -webkit-tap-highlight-color: transparent;
+
+  /* Disable Overscroll Behavior */
+  overscroll-behavior: none;
+
+  /* Height Also Needed in html for Parallax Scrolling Effect */
+  /* CSS fix for 100vh in Mobile Webkit */
+  /* Reference: https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
+  height: -webkit-fill-available;
+
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  /* CSS fix for 100vh in Mobile Webkit */
+  /* Reference: https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
+  min-height: 100vh;
+  height: -webkit-fill-available;
+}
+
+#home-background {
+  background-image: url("../images/home.png");
+}
+#portfolio-background {
+  background-image: url("../images/portfolio.png");
+}
+#contact-background {
+  background-image: url("../images/contact.png");
+}
+[id$="-background"] {
+  position: relative;
+  min-height: 100vh;
+
+  /* Parallax Scrolling Effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Disable Parallax Scrolling Effect */
+  [id$="-background"] {
+    background-attachment: scroll;
+  }
+}
+
+#home-header {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen and (max-height: 800px) {
+  #home-header h1,
+  #home-header h2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  #home-header {
+    top: 90%;
+  }
+}
+
+#portfolio-header,
+#contact-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Container for Contents */
+.content {
+  /* Margin for Fixed Navigation Bar */
+  margin: 60px auto;
+
+  padding: 0;
+  width: 90%;
+  max-width: 1080px;
+}
+
+/* Table Container for About Section */
+.table {
+  display: table;
+}
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+#profile {
+  padding: 30px;
+}
+#profile-image {
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Container for Contact Section */
+#contact-container {
+  width: 100%;
+}
+#contact-column {
+  padding: 15px;
+  width: 50%;
+}
+#contact-column a {
+  text-decoration: none;
+}
+#contact-column span {
+  vertical-align: 30%;
+}
+#location-image {
+  float: right;
+  width: 350px;
+  height: auto;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+  .table {
+    display: block;
+  }
+  .cell {
+    display: block;
+  }
+  #profile {
+    text-align: center;
+  }
+  #profile-image {
+    max-width: 300px;
+    width: 100%;
+  }
+  #contact-container {
+    text-align: center;
+  }
+  #contact-column {
+    padding: 0;
+    width: 100%;
+  }
+  #location-image {
+    float: none;
+    max-width: 350px;
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  padding-top: 300px;
+  padding-bottom: 30px;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+
+  /* The element is pushed below both left and right floated elements */
+  clear: both;
+}
